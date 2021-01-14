@@ -122,15 +122,20 @@ return
 
 ;;;;; wheel examples ;;;;;;;;;;
 
-m-r-wheelup:      ;change volume with wheel -  hold right button down and use wheel
-Send {Volume_Up}
+m-r-wheelup:      ;change tabs with wheel -  hold right button down and use wheel
+Send ^+{Tab}
 return
 
 m-r-wheeldown:
-Send {Volume_Down}
+Send ^{Tab}
 return
 
 ;;;;;;;; rocker examples ;;;;;;;;;;
+
+;close tab with right and middle click
+m-rm:
+Send ^w
+return
 
 m-rl:
 ;msgbox,,,if you keep right held down, clicking left will repeat action,5
@@ -194,9 +199,9 @@ XButton1::Send !{Left}
 XButton2::Send !{Right}
 
 mbutton & rbutton::
-send {ctrl down}{LButton}{ctrl up}
+Send ^w
 return
 
 mbutton & lbutton::
-Send ^w
+send {ctrl down}{LButton}{ctrl up}
 return
